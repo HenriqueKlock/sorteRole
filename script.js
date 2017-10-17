@@ -8,7 +8,7 @@ $(document).ready(function(){
   
          $("#btnCadLugar").click(function(){ 
         	if($("#textCadLugar").val() == " " || $("#textCadLugar").val() == ""){
-        		alert("preencha");
+        		alert("Por favor, preencha com algum lugar.");
         	}else{
 	            lugar.push($("#textCadLugar").val());
 	            $("#pLugar").text(lugar + "\n");
@@ -19,7 +19,7 @@ $(document).ready(function(){
 
         $("#btnCadComida").click(function(){ 
         	if($("#textCadComida").val() == " " || $("#textCadComida").val() == ""){
-        		alert("preencha");
+        		alert("Por favor, preencha com alguma comida.");
         	}else{
 	            comida.push($("#textCadComida").val());
 	            $("#pComida").text(comida);
