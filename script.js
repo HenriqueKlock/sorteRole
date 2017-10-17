@@ -1,19 +1,29 @@
 $(document).ready(function(){
-
+        var listaUl, listaLi, listaA;
+        var i;
         var x = 0;
         var lugar = [];
         var y = 0;
-        var comida = [];
+        var input;
+        var filter;
+        listaUl = document.getElementById("myUL");
+        listaLi = listaUl.getElementsByTagName('li');
+
+        for(i = 0; i < listaLi.length; i++){
+            listaA = listaLi[i].getElementsByTagName("a")[0];
+            lugar.push(listaA.text);
+        }
 
   
          $("#btnCadLugar").click(function(){ 
         	if($("#textCadLugar").val() == " " || $("#textCadLugar").val() == ""){
         		alert("preencha");
         	}else{
+                var novoElemento = $("#textCadLugar").val();
+                $("#myUL").append("<li><a>"+ novoElemento +"</a></li>");
 	            lugar.push($("#textCadLugar").val());
-	            $("#pLugar").text(lugar + "\n");
-	            x++;
 	            $("#textCadLugar").val("");
+                filter = "xadre";
             }
         }); 
 
@@ -54,27 +64,31 @@ $(document).ready(function(){
     			}
     		}
     	});
-        $("#myInput").click(function(){
+        $("#textCadLugar").click(function(){
             $("#myUL").toggle();
+        });
+
+        $("#textCadLugar").keyup(function(){
+            var ul, li, a, i;
+            input = document.getElementById('textCadLugar');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+    
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "block";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
         });
 });             
 
-function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
+function filtraLista() {
+    
     
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "block";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
+        
 }
