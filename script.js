@@ -16,60 +16,66 @@ $(document).ready(function(){
 
   
          $("#btnCadLugar").click(function(){ 
-        	if($("#textCadLugar").val() == " " || $("#textCadLugar").val() == ""){
-        		alert("preencha");
-        	}else{
+            if($("#textCadLugar").val() == " " || $("#textCadLugar").val() == ""){
+                alert("preencha");
+            }else{
                 var novoElemento = $("#textCadLugar").val();
                 $("#myUL").append("<li><a>"+ novoElemento +"</a></li>");
-	            lugar.push($("#textCadLugar").val());
-	            $("#textCadLugar").val("");
-                filter = "xadre";
+                lugar.push($("#textCadLugar").val());
+                $("#textCadLugar").val("");
+                filtraLista();
             }
         }); 
 
         $("#btnCadComida").click(function(){ 
-        	if($("#textCadComida").val() == " " || $("#textCadComida").val() == ""){
-        		alert("preencha");
-        	}else{
-	            comida.push($("#textCadComida").val());
-	            $("#pComida").text(comida);
-	            y++;
-	            $("#textCadComida").val("");
+            if($("#textCadComida").val() == " " || $("#textCadComida").val() == ""){
+                alert("preencha");
+            }else{
+                comida.push($("#textCadComida").val());
+                $("#pComida").text(comida);
+                y++;
+                $("#textCadComida").val("");
             }
         });
 
         $("#btnLugar").click(function(){
-        	$(".col-sm-3").toggle();
+            $(".col-sm-3").toggle();
         });
 
         $("#btnComida").click(function(){
-        	$(".col-sm-9").toggle();
+            $(".col-sm-9").toggle();
         });  
 
         $("#btnSortLugar").click(function(){
-    		var numeroSortLugar = Math.floor(Math.random() * lugar.length);
-    		var i;
-    		for(i = 0; i < lugar.length; i++){
-    			if(numeroSortLugar == i){
-    				$("#resultLugar").text(lugar[i]);
-    			}
-    		}
-    	});
-    	$("#btnSortComida").click(function(){
-    		var numeroSortComida = Math.floor(Math.random() * comida.length);
-    		var j;
-    		for(j = 0; j < comida.length; j++){
-    			if(numeroSortComida == j){
-    				$("#resultComida").text(comida[j]);
-    			}
-    		}
-    	});
+            var numeroSortLugar = Math.floor(Math.random() * lugar.length);
+            var i;
+            for(i = 0; i < lugar.length; i++){
+                if(numeroSortLugar == i){
+                    $("#resultLugar").text(lugar[i]);
+                }
+            }
+        });
+        $("#btnSortComida").click(function(){
+            var numeroSortComida = Math.floor(Math.random() * comida.length);
+            var j;
+            for(j = 0; j < comida.length; j++){
+                if(numeroSortComida == j){
+                    $("#resultComida").text(comida[j]);
+                }
+            }
+        });
         $("#textCadLugar").click(function(){
             $("#myUL").toggle();
         });
+        
+        
 
-        $("#textCadLugar").keyup(function(){
-            var ul, li, a, i;
+      
+});      
+
+function filtraLista() {
+    
+                    var ul, li, a, i;
             input = document.getElementById('textCadLugar');
             filter = input.value.toUpperCase();
             ul = document.getElementById("myUL");
@@ -83,12 +89,7 @@ $(document).ready(function(){
                     li[i].style.display = "none";
                 }
             }
-        });
-});             
-
-function filtraLista() {
-    
-    
 
         
 }
+
