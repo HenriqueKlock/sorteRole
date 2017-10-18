@@ -51,7 +51,9 @@ $(document).ready(function(){
             var i;
             for(i = 0; i < lugar.length; i++){
                 if(numeroSortLugar == i){
-                    $("#resultLugar").text(lugar[i]);
+                    $(".divResultado").css("display","none");
+                    setTime();
+                    $("#idResultado").text(lugar[i]);
                 }
             }
         });
@@ -91,5 +93,17 @@ function filtraLista() {
             }
 
         
+}
+
+var myVar;
+
+function setTime() {
+    $("#loader").css("display", "block");
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  $("#loader").css("display","none");
+  $(".divResultado").css("display","block");
 }
 

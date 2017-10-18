@@ -13,72 +13,113 @@
              position:relative;
             
         }   
-    .col-sm-3 center, .col-md-6 center, .col-sm-9 center, .col-md-6 center
+
+    .col-sm-3 input[type="text"]
+        {
+            width: 80%; /* Full-width */
+            font-size: 16px; /* Increase font-size */
+            padding: 12px 20px 12px 40px; /* Add some padding */
+            border: 1px solid #ddd; /* Add a grey border */
+        }
+    .col-sm-3__input--buttonMais
+        {
+            padding: 12px 12px 12px 12px; /* Add some padding */
+            border: 1px solid #ddd; /* Add a grey border */
+        }
+    .col-sm-10
+        {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    .col-sm-10 span
+        {
+            margin-right: 80%;
+            color: blue;
+            font-size: 30px;
+        }
+    .divResultado
         {
             border: 1px solid black;
-            border-width: 2px;
-        }
-    .col-sm-9 center, .col-sm-3 center
+            background-color: #D5D5F9;
+            margin-top: 60%;
+            height: 100px;
+            /*display: none;*/
+        } 
+    #idResultado
         {
-            background-color: #ffffcc;
-        }
-    p
+            font-size: 30px;
+        }              
+
+    #myUL 
         {
-            font-size: 12px;
-        }
-    .footer 
-        {
-            position: relative;
-            bottom: 0;
-            width: 100%;            
-        }
-    .col-sm-3, .col-sm-9
-        {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
             display: none;
-        }    
+        }
+
+    #myUL li a 
+        {   
+            margin-right: 3%;
+            width: 80%;
+            border: 1px solid #ddd; /* Add a border to all links */
+            background-color: #f6f6f6; /* Grey background color */
+            text-decoration: none; /* Remove default text underline */
+            font-size: 15px; /* Increase the font-size */
+            color: black; /* Add a black text color */
+            display: block;  /*Make it into a block element to fill the whole list */
+        }
+
+    #myUL li a:hover:not(.header) 
+        {
+            background-color: #eee; /* Add a hover effect to all links, except for headers */
+        } 
+    #loader 
+        {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              z-index: 1;
+              width: 150px;
+              height: 150px;
+              margin: -75px 0 0 -75px;
+              border: 16px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 16px solid #3498db;
+              width: 120px;
+              height: 120px;
+              -webkit-animation: spin 2s linear infinite;
+              animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }               
+
     
-        @media only screen and (max-width: 500px)
+
+    @media only screen and (max-width: 500px)
+        {
+            #myUL li a
                 {
-                        .col-sm-9 
-                                {
-                                       padding-top: 10px;
-                                }
-                        .footer
-                                {
-                                        margin-top: 30px;
-                                }
+                    margin-right: 13%;
                 }
 
-     #textCadLugar {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    /*margin-bottom: 12px;  Add some space below the input */
-    }
-
-    #myUL {
-        /* Remove default list styling */
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-    }
-
-    #myUL li a {
-        border: 1px solid #ddd; /* Add a border to all links */
-        /*margin-top: -1px;  Prevent double borders */
-        background-color: #f6f6f6; /* Grey background color */
-        padding: 6px; /* Add some padding */
-        text-decoration: none; /* Remove default text underline */
-        font-size: 15px; /* Increase the font-size */
-        color: black; /* Add a black text color */
-        display: block;  /*Make it into a block element to fill the whole list */
-    }
-
-    #myUL li a:hover:not(.header) {
-        background-color: #eee; /* Add a hover effect to all links, except for headers */
-    }            
+            .col-sm-10
+                {
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                }
+            .col-sm-10 span
+                {
+                    margin-right: 50%;
+                    color: blue;
+                    font-size: 20px;
+                }          
+        }

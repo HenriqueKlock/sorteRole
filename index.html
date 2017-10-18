@@ -13,58 +13,37 @@
 <body>
 <div class="geral">
 <div class="container-fluid">
-  <center><h1>Sorteie seu Role</h1></center>
-  <br><br>
-  <center>
-  <input type="button" name="btnLugar" id="btnLugar" value="Lugar">
-  <input type="button" name="btnComida" id="btnComida" value="Comida">
-  </center>
-  <br>
   <div class="row">
-    <div class="col-sm-3 col-md-6">
+    <div class="col-sm-10 text-right">
+      <span>SRole</span>
+      <input type="button" name="btnSortLugar" id="btnSortLugar" value="Sortear" class="btn btn-primary">
+    </div>  
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-3 col-md-12">
    <center>
-    <h3>Lugar</h3>
-    
      <input type="text" id="textCadLugar" onkeyup="filtraLista()" placeholder="Procure lugares..">
-     <input type="button" name="btnCadLugar" id="btnCadLugar" value="+">
+     <input class="col-sm-3__input--buttonMais" type="button" name="btnCadLugar" id="btnCadLugar" value="+">
 
         <ul id="myUL">
           <li><a href="#">Xadrez</a></li>
           <li><a href="#">Marinha</a></li>
-
           <li><a href="#">Prainha(Sem Vento)</a></li>
           <li><a href="#">Beira mar(Kaue)</a></li>
-
           <li><a href="#">Bom abrgo</a></li>
           <li><a href="#">Abraão</a></li>
           <li><a href="#">Estreito</a></li>
         </ul> 
-                                <br><br>
-    <input type="button" name="btnSortLugar" id="btnSortLugar" value="Sortear" class="btn btn-primary">
-                <p id="pLugar">
-    <br><br>
-    <p id="resultLugar">
    </center>
     </div>
-    <div class="col-sm-9 col-md-6">
-      <center>
-    <h3>Comida</h3>
-    
-    <input type="text" name="textCadComida" id="textCadComida" placeholder="adicionar campo">
-                <input type="button" name="btnCadComida" id="btnCadComida" value="+">
-                <br><br>
-    <input type="button" name="btnSortComida" id="btnSortComida" value="Sortear" class="btn btn-primary">
-      <p id="pComida">
-    <br><br>
-    <p id="resultComida">
-      </center>
-    </div>
   </div>
-</div>
-<div class="footer navbar-bottom">
-  <center>  
-    <p>Desenvolvido por Henrique Klock</p>
-  </center> 
+  <div class="divResultado" style="display: none">
+    <center> 
+    <p id="idResultado"></p>
+    </center>
+  </div>
+  <div class="loader" id="loader" style="display: none"></div> 
 </div>
 </div>
 </body>
